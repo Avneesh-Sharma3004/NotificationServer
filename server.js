@@ -317,6 +317,14 @@ messagesRef.onSnapshot(
               senderId: message.senderId,
               receiverId: message.receiverId,
             },
+            body: JSON.stringify({
+              to: pushToken,
+              title,
+              body,
+              data,
+              categoryId: "chat",
+              priority: "high",
+            }),
           });
 
           console.log("Notification sent successfully");
